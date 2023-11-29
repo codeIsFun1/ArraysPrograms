@@ -1,0 +1,33 @@
+
+public class Main
+{
+    public static void frequency(int a[]){
+        int b[]=new int[a.length];
+        int visited=-1;
+        for (int i=0;i<=a.length-1;i++){
+            int c=1;
+            for (int j=i+1;j<=a.length-1;j++){
+                if (a[i]==a[j]){
+                    c++;
+                    b[j]=visited;
+                } 
+            } 
+            
+            if (b[i]!=visited){
+                b[i]=c;
+            } 
+        } 
+        
+        for (int i=0;i<=b.length-1;i++){
+            if (b[i]!=visited){
+                System.out.println(a[i]+" | "+b[i]);
+            } 
+        } 
+    }
+	public static void main(String[] args) {
+// 		System.out.println("Hello World");
+
+        int num[]={1,2,3,6,5,6,2,3,5,6,4,8,7,5,6,4,1,2,3};
+        frequency(num);
+	}
+}
