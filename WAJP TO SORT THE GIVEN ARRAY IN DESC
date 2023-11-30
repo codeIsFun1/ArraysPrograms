@@ -1,0 +1,22 @@
+import java.util.Arrays;
+public class Main
+{
+    public static int [] sort(int a[]){
+        int temp=0;
+        for (int i=0;i<=a.length-1;i++){
+            for (int j=i+1;j<=a.length-1;j++){
+                if (a[i]<a[j]){
+                    temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                } 
+            } 
+        } 
+        return a;
+    }
+	public static void main(String[] args) {
+		int num[]={1,2,3,6,5,4,7,8,9,5,6,5,4,4,1,6,8,8};
+    int sorted[]=sort(num);
+		System.out.println(Arrays.toString(sorted));
+	}
+}
